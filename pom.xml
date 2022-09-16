@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath/>
+    </parent>
+
+    <groupId>org.kgonia</groupId>
+    <artifactId>jetty-loom-spring-boot</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>Spring Boot Jetty Loom Autoconfig</name>
+
+    <properties>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <java.version>19</java.version>
+    </properties>
+
+    <modules>
+        <module>jetty-loom-spring-boot-autoconfigure</module>
+        <module>jetty-loom-spring-boot-starter</module>
+        <module>jetty-loom</module>
+        <module>jetty-loom-spring-boot-simple-webapp</module>
+    </modules>
+
+
+
+</project>

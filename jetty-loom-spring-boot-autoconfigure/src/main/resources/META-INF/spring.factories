@@ -1,0 +1,3 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+org.kgonia.jetty.loom.autoconfigure.LoomThreadPoolProperties,\
+org.kgonia.jetty.loom.autoconfigure.JettyLoomConfig
