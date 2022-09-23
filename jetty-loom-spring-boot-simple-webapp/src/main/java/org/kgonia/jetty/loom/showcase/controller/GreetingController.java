@@ -17,10 +17,20 @@ public class GreetingController {
 
     private final Random random = new Random();
 
-    @GetMapping("/greeting")
-    public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws InterruptedException {
-        var duration = random.nextLong(1000, 10000);
+    @GetMapping("/blocking/greeting")
+    public Greeting blockingGreeting(@RequestParam(value = "name", defaultValue = "World") String name) throws InterruptedException {
+        var duration = random.nextLong(1000, 5000);
         Thread.sleep(duration);
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+
+    @GetMapping("/non-blocking/greeting")
+    public Greeting nonblockingGreeting(@RequestParam(value = "name", defaultValue = "World") String name) throws InterruptedException {
+        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+    }
+
+    @GetMapping("/non-blocking/numbers")
+    public Long nonblockingAddition() throws InterruptedException {
+        return (long) random.nextInt() + random.nextInt();
     }
 }
