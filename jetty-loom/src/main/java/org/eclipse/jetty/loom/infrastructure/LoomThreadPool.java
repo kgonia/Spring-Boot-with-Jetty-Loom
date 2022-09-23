@@ -17,7 +17,7 @@ public class LoomThreadPool extends AbstractLifeCycle implements ThreadPool
     }
 
     public LoomThreadPool(boolean inheritInheritableThreadLocals) {
-        ThreadFactory factory = Thread.ofPlatform()
+        ThreadFactory factory = Thread.ofVirtual()
                 .allowSetThreadLocals(true)
                 .inheritInheritableThreadLocals(inheritInheritableThreadLocals)
                 .name("LoomThreadPool-", 0)
@@ -28,7 +28,7 @@ public class LoomThreadPool extends AbstractLifeCycle implements ThreadPool
     @Override
     public void execute(Runnable command)
     {
-        executorService.submit(command);
+        executorService.execute(command);
     }
 
     @Override
